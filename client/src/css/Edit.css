@@ -1,0 +1,58 @@
+.Edit-Title,
+.Edit-h,
+.Edit-p {
+  color: #f8f9fa;
+  background-color: #343a40;
+  font-style: italic;
+}
+
+.Edit-Title {
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;
+  margin-bottom: 7px;
+  font-size: 30px;
+  width: 300px;
+}
+.Edit-h {
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+.Edit-p {
+  border-color: #f8f9fa;
+  border-radius: 5px;
+  width: 250px;
+  margin-left: 20px;
+  height: auto;
+}
+.Edit-delete {
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #f8f9fa;
+}
+
+.input-group > button {
+  padding: 0 7px 4px 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  color: #6c757d;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.Edit-close:hover,
+.input-group > button:hover {
+  border: 1px solid transparent;
+  outline: transparent;
+  color: #f8f9fa;
+}
+.Edit-close:focus,
+.input-group > button:focus {
+  border: 1px solid transparent;
+  outline: transparent;
+}
