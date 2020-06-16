@@ -18,13 +18,13 @@ export default class App extends Component {
     super(props);
     this.rightBtn = React.createRef();
     this.centerBtn = React.createRef();
-    this.state = { apiResponse: null };
+    this.state = { apiResponse: [] };
   }
   async componentDidMount() {
     await this.callAPI();
   }
   callAPI() {
-    fetch("http://10.100.102.9:9000/Notes/")
+    fetch("http://localhost:9000/Notes/")
       .then((data) => data.json())
       .then((data) => {
         this.setState({ apiResponse: data });
