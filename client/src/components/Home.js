@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import Note from "./Note";
 
 export default function Home({ apiResponse }) {
-  console.log({ apiResponse });
   return (
     <div className="m-auto text-center">
       {apiResponse.map((item) => (

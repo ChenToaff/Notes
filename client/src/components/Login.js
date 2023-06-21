@@ -27,7 +27,6 @@ export default function Login({ rightBtn }) {
       />
       <input
         type="password"
-        name="form_password"
         className="form-control"
         placeholder="Password"
         required
