@@ -1,8 +1,7 @@
 var express = require("express");
 const router = express.Router();
 const path = require("path");
-const db = require(path.resolve(__dirname, "../db.js"));
-const Titles = db.model("Titles");
+const Titles = require("../models/titles");
 
 router.get("/", async (req, res) => {
   let titles = await Titles.find({}, { _id: 0, __v: 0 });
