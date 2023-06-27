@@ -30,7 +30,8 @@ body {
   min-height: 200px;
 
   text-align: left;
-  padding: 9px;
+  padding: 23px;
+  padding-top: 15px;
 }
 .catg-card > div > h5 {
   padding-left: 3px;

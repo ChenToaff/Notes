@@ -23,7 +23,7 @@
 }
 .Edit-Text {
   border-color: #f8f9fa;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 250px;
   margin-left: 20px;
   height: auto;
@@ -75,4 +75,7 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+.rounded {
+  border-radius: 10px !important;
 }
