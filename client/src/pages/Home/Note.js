@@ -1,10 +1,8 @@
-import { useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 
 export default function Note({ title, elements }) {
-  const containerRef = useRef({});
-  // const numberOfRow
   return (
-    <div ref={containerRef} className="catg-card  font-italic ">
+    <div className="catg-card  font-italic ">
       <div className="bg-dark text-light rounded note-shadow">
         {title === "" ? <></> : <h1>{title}</h1>}
         {elements.map((element) => (
