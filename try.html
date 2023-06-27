@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        margin: 0 auto; /* center container */
+        width: 1200px;
+        padding-left: 0; /* remove list padding */
+        font-size: 0; /* remove inline-block white space;
+                                          see https://stackoverflow.com/a/32801275/3597276 */
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        margin: auto !important;
+      }
+
+      li {
+        display: inline-block;
+        font-size: 18px; /* restore font size removed in container */
+        list-style-type: none;
+        width: 400px;
+        line-height: 50px;
+        /* margin: 15px; */
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .catg-card {
+        /* width: 400px; */
+        width: 100%;
+        height: 100%;
+        padding: 2px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      @media screen and (max-width: 800px) {
+        ul {
+          width: 400px;
+        }
+      }
+      @media screen and (min-width: 801px) and (max-width: 1200px) {
+        ul {
+          width: 800px;
+        }
+      }
+      @media screen and (min-width: 1201px) {
+        ul {
+          width: 1200px;
+        }
+      }
+      /* @media screen and (min-width: 831px) and (max-width: 1030px) {
+        ul {
+          width: 800px;
+        }
+      }
+      @media screen and (min-width: 1031px) and (max-width: 1230px) {
+        ul {
+          width: 1000px;
+        }
+      }  */
+    </style>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div class="catg-card font-italic">
+          <div class="bg-secondary text-light rounded">
+            <h1>hhh</h1>
+            <p class="m-0">hhh</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="catg-card font-italic">
+          <div class="bg-secondary text-light rounded">
+            <h1>hhh</h1>
+            <p class="m-0">hhh</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="catg-card font-italic">
+          <div class="bg-secondary text-light rounded">
+            <h1>hhh</h1>
+            <p class="m-0">hhh</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="catg-card font-italic">
+          <div class="bg-secondary text-light rounded">
+            <h1>hhh</h1>
+            <p class="m-0">hhh</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="catg-card font-italic">
+          <div class="bg-secondary text-light rounded">
+            <h1>hhh</h1>
+            <p class="m-0">hhh</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

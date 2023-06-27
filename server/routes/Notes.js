@@ -1,10 +1,11 @@
 var express = require("express");
 const router = express.Router();
 const path = require("path");
-const Titles = require("../models/titles");
+const Notes = require("../models/note");
 
 router.get("/", async (req, res) => {
-  let titles = await Titles.find({}, { _id: 0, __v: 0 });
+  let titles = await Notes.find({}, { __v: 0 }).populate("elements");
+  console.log({ titles });
   res.send(titles);
 });
 
@@ -15,9 +16,9 @@ router.post("/changes", async (req, res) => {
       if (data[i].Elements)
         data[i].Elements = data[i].Elements.filter((el) => el != null);
     }
-    Titles.collection.drop();
+    Notes.collection.drop();
     for (let i = 0; i < data.length; i++) {
-      const title = new Titles(data[i]);
+      const title = new Notes(data[i]);
       await title.save();
     }
     res.send(req.body);

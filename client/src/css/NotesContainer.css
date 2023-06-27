@@ -1,0 +1,23 @@
+.notes-container {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  margin: auto !important;
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .notes-container {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .notes-container {
+    width: 800px;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .notes-container {
+    width: 1200px;
+  }
+}

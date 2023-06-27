@@ -8,8 +8,18 @@ const port = 9000;
 const MONGO_URL = "mongodb://127.0.0.1/Notes";
 app.use(cors());
 app.use(express.json());
+app.use(require("./middleware/responses"));
 app.use("/Notes", notesRouter);
-app.get("/", (req, res) => res.send("Api: Active"));
+app.use("/", require("./routes"));
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!");
+});
 
 // Connect to the database
 mongoose
@@ -25,12 +35,3 @@ mongoose
     );
   })
   .catch((err) => console.error("There was an error:\n" + err));
-
-app.use(function (err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
-});
-
-app.use(function (req, res, next) {
-  res.status(404).send("Sorry can't find that!");
-});
