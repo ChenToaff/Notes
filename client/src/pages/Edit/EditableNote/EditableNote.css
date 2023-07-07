@@ -1,0 +1,34 @@
+.Editable-Note {
+  margin: 2px;
+  padding: 5px;
+  padding-left: 15px;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.Editable-Note > .Last-Modified {
+  margin-top: auto;
+  color: #6c757d;
+  font-size: smaller;
+}
+
+.Editable-Note > .Delete-Btn {
+  height: fit-content;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #6c757d;
+  max-width: 10%;
+  /* width: 10%; */
+  text-align: end;
+  vertical-align: unset;
+  margin-top: 0;
+  margin-left: auto;
+}
+.Editable-Note > .Delete-Btn:hover {
+  transform: scale(1.1);
+  color: #f8f9fa;
+}

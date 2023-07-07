@@ -1,20 +1,14 @@
-import React, { Component, useEffect } from "react";
 import cookie from "react-cookies";
-import back from "../images/back.png";
+import "./Login.css";
 
-export default function Login({ rightBtn }) {
-  useEffect(() => {
-    rightBtn.current.href = "/";
-    rightBtn.current.firstChild.src = back;
-  }, []);
-
+export default function Login() {
   return (
     <form
       onSubmit={() => {
         cookie.save("token", "True", { path: "/" });
         return false;
       }}
-      className="form-signin text-center needs-validation"
+      className="login-page form-signin text-center needs-validation"
     >
       <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
       <input

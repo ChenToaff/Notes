@@ -1,0 +1,17 @@
+.login-page {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  margin: auto !important;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  min-width: 200px;
+  max-width: 300px;
+  width: 60%;
+}
+
+.login-page > input {
+  margin-top: 6px;
+}
+.login-page > button {
+  margin-top: 20px;
+}

@@ -7,12 +7,19 @@
 }
 
 .Edit-Title {
+  background: transparent;
   font-weight: 500;
   line-height: 1.2;
   border: none;
   margin-bottom: 7px;
   font-size: 30px;
-  width: 300px;
+  width: 90%;
+  border-bottom: 3px solid black;
+}
+.Edit-Title:focus,
+.Edit-Text:focus,
+.Edit-Header:focus {
+  outline: none !important;
 }
 .Edit-Header {
   font-weight: 500;
@@ -20,6 +27,9 @@
   border: none;
   margin-bottom: 3px;
   font-size: 20px;
+  background: transparent;
+
+  border-bottom: 3px solid black;
 }
 .Edit-Text {
   border-color: #f8f9fa;
@@ -29,13 +39,9 @@
   height: auto;
   margin-bottom: 2px;
   border: none;
-}
-.Edit-delete {
-  border: 1px solid transparent;
-  background-color: transparent;
-  font-weight: bolder;
-  cursor: pointer;
-  color: #f8f9fa;
+  background: transparent;
+
+  border-bottom: 3px solid black;
 }
 
 .input-group > button {
@@ -52,30 +58,10 @@
   border: 1px solid transparent;
   outline: transparent;
   color: #f8f9fa;
+  transform: scale(1.1);
 }
 .Edit-close:focus,
 .input-group > button:focus {
   border: 1px solid transparent;
   outline: transparent;
-}
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-.rounded {
-  border-radius: 10px !important;
 }

@@ -1,0 +1,36 @@
+.AddNoteBtn {
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  position: relative;
+  margin: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.AddNoteBtn:hover {
+  transform: scale(1.25);
+}
+.AddNoteBtn:before,
+.AddNoteBtn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #6c757d;
+}
+.AddNoteBtn:before {
+  width: 5px;
+  margin: 8px auto;
+}
+.AddNoteBtn:after {
+  margin: auto 8px;
+  height: 5px;
+}
+.AddNoteBtn:hover:before,
+.AddNoteBtn:hover:after {
+  background-color: #212529;
+}

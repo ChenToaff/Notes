@@ -1,0 +1,36 @@
+.catg-card {
+  width: 400px;
+  padding: 2px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 400px) {
+  .catg-card {
+    width: 90vw;
+  }
+}
+
+.catg-card > div {
+  min-height: 200px;
+
+  text-align: left;
+  padding: 23px;
+  padding-top: 15px;
+}
+.catg-card > div > h5 {
+  padding-left: 3px;
+}
+.catg-card > div > p {
+  white-space: pre-wrap;
+}
+.catg-card > div > h4 {
+  margin-bottom: 0;
+}
+.catg-card > div > span {
+  padding-left: 5px;
+}
+
+.note-shadow {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

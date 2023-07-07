@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
-import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import React, { createContext, useEffect, useState, useContext } from "react";
 import cookie from "react-cookies";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -14,31 +14,34 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
+export const setNotesContext = createContext();
+
 export default function App() {
-  const rightBtn = React.createRef();
-  const centerBtn = React.createRef();
   const [notes, setNotes] = useState([]);
+
   useEffect(() => {
     fetch("/Notes/").then(async (data) => setNotes(await data.json()));
   }, []);
   const loggedIn = cookie.load("token");
   return (
     <>
-      <Navbar {...{ centerBtn, rightBtn }}></Navbar>
       <BrowserRouter>
+        <Navbar></Navbar>
         <Routes>
           <Route element={loggedIn ? <Outlet /> : <Navigate to="/login" />}>
             <Route
               path="/edit"
-              element={<Edit {...{ setNotes, rightBtn, centerBtn, notes }} />}
+              element={
+                <setNotesContext.Provider value={setNotes}>
+                  <Edit {...{ notes }} />
+                </setNotesContext.Provider>
+              }
             />
           </Route>
           <Route path="/home" element={<Home notes={notes} />} />
           <Route
             path="/login"
-            element={
-              loggedIn ? <Navigate to="/edit" /> : <Login {...{ rightBtn }} />
-            }
+            element={loggedIn ? <Navigate to="/edit" /> : <Login />}
           />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
@@ -47,4 +50,5 @@ export default function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
