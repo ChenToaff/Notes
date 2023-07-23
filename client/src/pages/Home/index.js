@@ -1,12 +1,14 @@
+import NotesContainer from "components/NotesContainer";
+import { useEffect, useState } from "react";
 import Note from "./Note";
-import NotesContainer from "components/NotesConntainer";
+import axios from "utils/api";
 
-export default function Home({ notes }) {
-  return (
-    <NotesContainer>
-      {notes.map((note) => (
-        <Note key={note._id} note={note} />
-      ))}
-    </NotesContainer>
-  );
+export default function Home() {
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    axios.get("/notes/").then((res) => setNotes(res.data));
+  }, []);
+
+  return <NotesContainer NoteType={Note} notes={notes} />;
 }

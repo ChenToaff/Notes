@@ -3,7 +3,7 @@ import "./Note.css";
 export default function Note({ note }) {
   return (
     <div className="catg-card font-italic ">
-      <div className="bg-dark text-light rounded note-shadow">
+      <div data-color={note.color} className="rounded note-shadow">
         <h1>{note.title}</h1>
         {note.elements.map((element) =>
           element.type == "Header" ? (

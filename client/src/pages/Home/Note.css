@@ -25,6 +25,7 @@
   white-space: pre-wrap;
 }
 .catg-card > div > h4 {
+  line-break: anywhere;
   margin-bottom: 0;
 }
 .catg-card > div > span {

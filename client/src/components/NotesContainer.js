@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import ".//NotesContainer.css";
-export default function NotesContainer({ children }) {
+import "./NotesContainer.css";
+
+export default function NotesContainer({ NoteType, notes }) {
   const containerRef = useRef(null);
   const [cols, setCols] = useState(1);
 
@@ -24,8 +25,10 @@ export default function NotesContainer({ children }) {
           .fill(0)
           .map((element, index) => (
             <div key={index} className="col">
-              {children.map((child, i) => {
-                return i % (cols != 0 ? cols : 1) == index ? child : null;
+              {notes.map((note, i) => {
+                return i % (cols != 0 ? cols : 1) == index ? (
+                  <NoteType key={note._id} note={note} />
+                ) : null;
               })}
             </div>
           ))}

@@ -1,3 +1,6 @@
+.fixed-bottom {
+  right: unset !important;
+}
 .AddNoteBtn {
   background-color: white;
   width: 45px;

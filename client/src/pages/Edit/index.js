@@ -1,18 +1,32 @@
-import NotesContainer from "components/NotesConntainer";
-import EditableNote from "pages/Edit/EditableNote";
-import AddNote from "./AddNoteBtn";
-import "./Edit.css";
+import { createContext, useEffect, useState } from "react";
+import EditableNote from "./EditableNote";
+import NotesContainer from "components/NotesContainer";
+import AddNoteBtn from "./AddNoteBtn";
+// const axios = require("utils/api");
+import axios from "utils/api";
+export const editContext = createContext();
 
-export default function Edit({ notes }) {
+export default function Edit() {
+  const [notes, setNotes] = useState([]);
+
+  function updateNote(note) {
+    setNotes((oldNotes) =>
+      oldNotes.map((item) => {
+        if (item._id == note._id) {
+          return { ...note, lastModified: new Date().toISOString() };
+        }
+        return item;
+      })
+    );
+  }
+  useEffect(() => {
+    axios.get("/notes").then((res) => setNotes(res.data));
+  }, []);
+
   return (
-    <>
-      <NotesContainer>
-        {notes.map((note) => (
-          <EditableNote key={note._id} note={note}></EditableNote>
-        ))}
-      </NotesContainer>
-
-      <AddNote />
-    </>
+    <editContext.Provider value={{ setNotes, notes, updateNote }}>
+      <NotesContainer NoteType={EditableNote} notes={notes} />
+      <AddNoteBtn />
+    </editContext.Provider>
   );
 }

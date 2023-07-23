@@ -1,0 +1,49 @@
+.Editable-Note {
+  margin: 4px;
+  padding: 5px;
+  padding-left: 15px;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #fff;
+}
+
+.Editable-Note > .Last-Modified {
+  margin-top: auto;
+  color: #6c757d;
+  font-size: smaller;
+}
+
+.Edit-Title,
+.Edit-Header,
+.Edit-Text {
+  font-style: italic;
+}
+.Edit-Title:focus,
+.Edit-Text:focus,
+.Edit-Header:focus {
+  outline: none !important;
+}
+
+.input-group > button {
+  padding: 0 7px 4px 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  color: #6c757d;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.Edit-close:hover,
+.input-group > button:hover {
+  border: 1px solid transparent;
+  outline: transparent;
+  color: #f8f9fa;
+  transform: scale(1.1);
+}
+.Edit-close:focus,
+.input-group > button:focus {
+  border: 1px solid transparent;
+  outline: transparent;
+}
