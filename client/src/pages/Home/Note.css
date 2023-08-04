@@ -22,7 +22,9 @@
   padding-left: 3px;
 }
 .catg-card > div > p {
-  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .catg-card > div > h4 {
   line-break: anywhere;

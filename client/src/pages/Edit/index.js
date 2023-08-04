@@ -2,30 +2,31 @@ import { createContext, useEffect, useState } from "react";
 import EditableNote from "./EditableNote";
 import NotesContainer from "components/NotesContainer";
 import AddNoteBtn from "./AddNoteBtn";
-// const axios = require("utils/api");
 import axios from "utils/api";
+import useArray from "utils/useArray";
 export const editContext = createContext();
 
 export default function Edit() {
-  const [notes, setNotes] = useState([]);
+  const notes = useArray([]);
 
-  function updateNote(note) {
-    setNotes((oldNotes) =>
+  async function updateNote(update) {
+    console.log({ update });
+    notes.set((oldNotes) =>
       oldNotes.map((item) => {
-        if (item._id == note._id) {
-          return { ...note, lastModified: new Date().toISOString() };
+        if (item._id == update._id) {
+          return update;
         }
         return item;
       })
     );
   }
   useEffect(() => {
-    axios.get("/notes").then((res) => setNotes(res.data));
+    axios.get("/notes").then((res) => notes.set(res.data));
   }, []);
 
   return (
-    <editContext.Provider value={{ setNotes, notes, updateNote }}>
-      <NotesContainer NoteType={EditableNote} notes={notes} />
+    <editContext.Provider value={{ notes, updateNote }}>
+      <NotesContainer NoteType={EditableNote} notes={notes.array} />
       <AddNoteBtn />
     </editContext.Provider>
   );

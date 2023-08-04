@@ -4,10 +4,10 @@ import { editContext } from "pages/Edit";
 import "./DeleteNoteBtn.css";
 
 export default function DeleteNoteBtn({ note }) {
-  const { setNotes } = useContext(editContext);
+  const { notes } = useContext(editContext);
 
   function handleDelete(note) {
-    setNotes((oldNotes) =>
+    notes.set((oldNotes) =>
       oldNotes.filter((element) => element._id != note._id)
     );
     axios.delete(`/notes/${note._id}`).catch(() => {

@@ -3,7 +3,13 @@ body {
   height: 100%;
   background-color: #f5f5f5;
 }
-
+.input-group > button {
+  padding: 0px;
+}
+.Edit-close:hover,
+.input-group > button:hover {
+  color: black !important;
+}
 #root {
   display: flex;
   flex-wrap: wrap;

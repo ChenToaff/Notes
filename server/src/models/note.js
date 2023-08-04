@@ -4,6 +4,8 @@ const element = require("./element");
 
 const NoteSchema = mongoose.Schema({
   title: String,
+  text: String,
+  image: String,
   elements: [{ type: mongoose.Types.ObjectId, ref: "elements" }],
   lastModified: { type: Date, default: Date.now },
   color: {

@@ -1,0 +1,22 @@
+.add-image-btn:hover {
+  cursor: pointer;
+}
+
+.add-image-btn {
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+}
+.add-image-btn-container {
+  padding: 4px !important;
+  margin: 2px;
+  color: #6c757d;
+  height: fit-content;
+}
+.add-image-btn-container:hover {
+  color: black;
+  cursor: pointer;
+  background: #6c757d82;
+  border-radius: 50% !important;
+  transform: none !important;
+}

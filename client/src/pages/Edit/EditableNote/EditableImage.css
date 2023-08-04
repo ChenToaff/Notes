@@ -1,0 +1,29 @@
+.image-container {
+  position: relative;
+}
+.image-trash-can {
+  top: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: black;
+  visibility: hidden;
+
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  background: #5c757d82;
+  border-radius: 50%;
+}
+.image-container:hover .image-trash-can {
+  visibility: visible;
+}
+.image-container:hover .image-trash-can:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}

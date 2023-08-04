@@ -1,12 +1,12 @@
 import axios from "utils/api";
+import { useState } from "react";
+import useUpdateEffect from "utils/useUpdateEffect";
 import "./EditableTitle.css";
-import { useEffect, useState } from "react";
-import useDidMountEffect from "utils/useDidMountEffect";
 
 export default function EditableTitle({ note }) {
   const [value, setValue] = useState(note.title);
 
-  useDidMountEffect(() => {
+  useUpdateEffect(() => {
     const delayFn = setTimeout(() => {
       axios.patch(`/notes/${note._id}`, {
         title: value,

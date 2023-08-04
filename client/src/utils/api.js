@@ -13,6 +13,7 @@ axiosApiInstance.interceptors.request.use(
       Accept: "application/json",
       // "Content-Type": "application/x-www-form-urlencoded",
       "content-type": "application/json; charset=utf-8",
+      ...config.headers,
     };
     if (!isAbsoluteURLRegex.test(config.url)) {
       config.url = url + config.url;

@@ -1,16 +1,15 @@
 const mongoose = require("mongoose");
-const server = require("./server");
-const port = 9000;
-const MONGO_URL = "mongodb://127.0.0.1/Notes";
+const server = require("./src/server");
+const { MONGO_URI, PORT } = require("./config");
 
 mongoose
-  .connect(MONGO_URL, {
+  .connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Connected to database");
 
-    server.listen(port, () => console.log(`server listening at port ${port}`));
+    server.listen(PORT, () => console.log(`server listening at port ${PORT}`));
   })
   .catch((err) => console.error("There was an error:\n" + err));

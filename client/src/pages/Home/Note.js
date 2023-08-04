@@ -1,3 +1,4 @@
+import Image from "components/Image";
 import "./Note.css";
 
 export default function Note({ note }) {
@@ -5,15 +6,8 @@ export default function Note({ note }) {
     <div className="catg-card font-italic ">
       <div data-color={note.color} className="rounded note-shadow">
         <h1>{note.title}</h1>
-        {note.elements.map((element) =>
-          element.type == "Header" ? (
-            <h4 key={element._id}>{element.content}</h4>
-          ) : (
-            <p key={element._id} className="m-0">
-              {element.content}
-            </p>
-          )
-        )}
+        <p className="m-0">{note.text}</p>
+        <Image image={note.image} />
       </div>
     </div>
   );

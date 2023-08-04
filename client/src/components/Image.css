@@ -1,0 +1,6 @@
+.note-image {
+  max-width: 100%;
+  border: 1px solid black;
+  border-radius: 3%;
+  min-width: 50%;
+}

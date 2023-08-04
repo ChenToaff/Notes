@@ -4,9 +4,10 @@ import { useContext } from "react";
 import { editContext } from "pages/Edit";
 
 export default function AddNoteBtn() {
-  const { setNotes } = useContext(editContext);
+  const { notes } = useContext(editContext);
   function addNote(note) {
-    setNotes((oldNotes) => [note, ...oldNotes]);
+    notes.set((oldNotes) => [note, ...oldNotes]);
+    window.scrollTo({ top: 0, left: 0 });
   }
   return (
     <div className="fixed-bottom m-3">

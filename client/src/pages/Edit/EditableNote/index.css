@@ -1,7 +1,6 @@
 .Editable-Note {
   margin: 4px;
-  padding: 5px;
-  padding-left: 15px;
+  padding: 8px;
   min-height: 200px;
   display: flex;
   flex-wrap: wrap;

@@ -1,18 +1,29 @@
 .color-picker {
-  border-radius: 50% !important;
-  border: 1px solid black !important;
-  width: 30px;
-  height: 30px;
-  margin: auto;
+  color: #6c757d;
+  margin: 2px;
+  padding: 4px !important;
 }
 
+.color-picker:hover {
+  color: black;
+  cursor: pointer;
+  background: #6c757d82;
+  border-radius: 50% !important;
+  transform: none !important;
+}
+.color-bucket:hover {
+  cursor: pointer;
+}
+.color-bucket {
+  height: 40px;
+  width: 40px;
+  margin: 2px;
+  height: fit-content;
+}
 .color-picker {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
-}
-.color-picker:hover {
-  transform: scale(1) !important;
 }
 
 .color-picker .tooltiptext {
@@ -32,10 +43,12 @@
   cursor: auto;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   display: flex;
   gap: 1px;
-  right: 0;
+  row-gap: 4px;
+  left: 0;
+  padding: 3px;
 }
 
 .color-picker:focus .tooltiptext {
@@ -47,7 +60,6 @@
   background-color: "red";
   border-radius: 50%;
   cursor: pointer;
-  /* border: 1px solid grey; */
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
     0 2px 6px 2px rgba(60, 64, 67, 0.149); /* Position the tooltip */
 }
@@ -70,6 +82,10 @@
 [data-color="#fff"] {
   background-color: #fff !important;
 }
-.mini-circle:hover {
+[data-color="#d3bfdb"] {
+  background-color: #d3bfdb !important;
+}
+
+#d3bfdb .mini-circle:hover {
   border: 1px solid black;
 }
