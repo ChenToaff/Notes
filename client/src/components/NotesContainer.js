@@ -7,9 +7,10 @@ export default function NotesContainer({ NoteType, notes }) {
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setCols(Math.floor(containerRef.current.clientWidth / 400));
+      const _cols = Math.floor(containerRef.current.clientWidth / 400);
+      setCols(_cols === 0 ? 1 : _cols);
     };
-    setCols(Math.floor(containerRef.current.clientWidth / 400));
+    handleWindowResize();
 
     window.addEventListener("resize", handleWindowResize);
 
@@ -18,20 +19,28 @@ export default function NotesContainer({ NoteType, notes }) {
     };
   }, []);
 
+  const actualCols = new Array(cols).fill().map(() => []);
+  const colsHeight = new Array(cols).fill(0);
+
+  for (let note of notes) {
+    let height = 1;
+    if (note.image) {
+      height = 2;
+    }
+    const minIndex = colsHeight.indexOf(Math.min(...colsHeight));
+    actualCols[minIndex].push(<NoteType key={note._id} note={note} />);
+    colsHeight[minIndex] += height;
+  }
   return (
     <div ref={containerRef} className="notes-container m-auto">
       <div className="row w-100 m-auto">
-        {Array(cols != 0 ? cols : 1)
-          .fill(0)
-          .map((element, index) => (
+        {actualCols.map((element, index) => {
+          return (
             <div key={index} className="col">
-              {notes.map((note, i) => {
-                return i % (cols != 0 ? cols : 1) == index ? (
-                  <NoteType key={note._id} note={note} />
-                ) : null;
-              })}
+              {element}
             </div>
-          ))}
+          );
+        })}
       </div>
     </div>
   );

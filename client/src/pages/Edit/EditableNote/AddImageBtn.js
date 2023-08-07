@@ -3,20 +3,19 @@ import { editContext } from "..";
 import axios from "utils/api";
 import "./AddImageBtn.css";
 
-export default function AddImageBtn({ note }) {
+export default function AddImageBtn({ note, setImageLoading }) {
   const { updateNote } = useContext(editContext);
-  function uploadImage(e) {
+  async function uploadImage(e) {
     const formData = new FormData();
     formData.set("image", e.target.files[0]);
-    axios
-      .patch(`/notes/${note._id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        updateNote(res.data);
-      });
+    setImageLoading(true);
+    const res = await axios.patch(`/notes/${note._id}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    setImageLoading(false);
+    updateNote(res.data);
     e.target.value = "";
   }
 

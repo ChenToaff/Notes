@@ -1,14 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 import EditableNote from "./EditableNote";
 import NotesContainer from "components/NotesContainer";
 import AddNoteBtn from "./AddNoteBtn";
-import axios from "utils/api";
-import useArray from "utils/useArray";
+
 export const editContext = createContext();
 
-export default function Edit() {
-  const notes = useArray([]);
-
+export default function Edit({ notes }) {
   async function updateNote(update) {
     console.log({ update });
     notes.set((oldNotes) =>
@@ -20,9 +17,6 @@ export default function Edit() {
       })
     );
   }
-  useEffect(() => {
-    axios.get("/notes").then((res) => notes.set(res.data));
-  }, []);
 
   return (
     <editContext.Provider value={{ notes, updateNote }}>

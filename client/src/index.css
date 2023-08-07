@@ -13,6 +13,7 @@ body {
 #root {
   display: flex;
   flex-wrap: wrap;
+  height: inherit;
 }
 
 .row {

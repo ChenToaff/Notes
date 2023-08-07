@@ -1,13 +1,14 @@
 .color-picker {
   color: #6c757d;
   margin: 2px;
-  padding: 4px !important;
+  padding: 2px !important;
+  height: fit-content;
 }
 
 .color-picker:hover {
   color: black;
   cursor: pointer;
-  background: #6c757d82;
+  background: #a6b3be73;
   border-radius: 50% !important;
   transform: none !important;
 }

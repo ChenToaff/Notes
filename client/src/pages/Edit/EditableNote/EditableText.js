@@ -21,6 +21,11 @@ export default function EditableText({ note }) {
       className="text-box"
       contentEditable="true"
       suppressContentEditableWarning
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+        }
+      }}
       onInputCapture={(e) => setValue(e.currentTarget.textContent)}
     >
       {note.text}
